@@ -6,56 +6,56 @@ const SHOP_DATA = [
       items: [
         {
           id: 1,
-          name: 'Brown Brim',
-          imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+          name: 'Snoopy Baseball Cap',
+          imageUrl: 'https://i.ibb.co/LJNxLx4/Snoopy-Baseball-Cap.jpg',
           price: 25
         },
         {
           id: 2,
-          name: 'Blue Beanie',
-          imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
+          name: 'Star Wars Baseball Cap',
+          imageUrl: 'https://i.ibb.co/kV7nzT2/Star-Wars-Baseball-Cap.jpg',
           price: 18
         },
         {
           id: 3,
-          name: 'Brown Cowboy',
-          imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+          name: 'Wolverine Baseball Cap',
+          imageUrl: 'https://i.ibb.co/PD1rpQm/Wolverine-Baseball-Cap.jpg',
           price: 35
         },
         {
           id: 4,
-          name: 'Grey Brim',
-          imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+          name: 'Disney Baseball Cap',
+          imageUrl: 'https://i.ibb.co/sp7svzR/Disney-Baseball-Cap.jpg',
           price: 25
         },
         {
           id: 5,
-          name: 'Green Beanie',
-          imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+          name: 'Hiking Sun Hat',
+          imageUrl: 'https://i.ibb.co/LJR9Kb2/kids-hiking-sun-hat-2-6-years-mh-pink.jpg',
           price: 18
         },
         {
           id: 6,
-          name: 'Palm Tree Cap',
-          imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+          name: 'Licensed Baseball Cap',
+          imageUrl: 'https://i.ibb.co/j3K2zqw/Licensed-Baseball-Cap.jpg',
           price: 14
         },
         {
           id: 7,
-          name: 'Red Beanie',
-          imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+          name: 'Run DMC Baseball Cap',
+          imageUrl: 'https://i.ibb.co/jVkw3P4/Run-DMC-Baseball-Cap.jpg',
           price: 18
         },
         {
           id: 8,
-          name: 'Wolf Cap',
-          imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-          price: 14
+          name: 'Special Edition Dad Hat',
+          imageUrl: 'https://i.ibb.co/FJnz8Rm/Special-Edition-Dad-Hat.jpg',
+          price: 38
         },
         {
           id: 9,
-          name: 'Blue Snapback',
-          imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+          name: 'Bucket Hat',
+          imageUrl: 'https://i.ibb.co/0ywP27t/Bucket-Hat.jpg',
           price: 16
         }
       ]
@@ -67,50 +67,50 @@ const SHOP_DATA = [
       items: [
         {
           id: 1,
-          name: 'Adidas NMD',
-          imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+          name: 'R78 Kids Trainers',
+          imageUrl: 'https://i.ibb.co/FwcgN9v/R78-Kids-Trainers.jpg',
           price: 220
         },
         {
           id: 2,
-          name: 'Adidas Yeezy',
-          imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
+          name: 'Smash Summer Animals Trainers',
+          imageUrl: 'https://i.ibb.co/rvVf5Pk/Smash-v2-Summer-Animals-Kids-Trainers.jpg',
           price: 280
         },
         {
           id: 3,
-          name: 'Black Converse',
-          imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
+          name: 'Stepfleex Kids Trainers',
+          imageUrl: 'https://i.ibb.co/wpJP4pJ/Stepfleex-2-SL-VE-V-Kids-Trainers.jpg',
           price: 110
         },
         {
           id: 4,
-          name: 'Nike White AirForce',
-          imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
+          name: 'Cabana Racer Baby Trainers',
+          imageUrl: 'https://i.ibb.co/9tsYWZX/Cabana-Racer-SL-Baby-Trainers.jpg',
           price: 160
         },
         {
           id: 5,
-          name: 'Nike Red High Tops',
-          imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
+          name: 'Multiflex Mesh Kids Trainers',
+          imageUrl: 'https://i.ibb.co/grxnsW9/Multiflex-Mesh-V-Kids-Trainers.jpg',
           price: 160
         },
         {
           id: 6,
-          name: 'Nike Brown High Tops',
-          imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
+          name: 'Popcat Kids Sandals',
+          imageUrl: 'https://i.ibb.co/VL9cyhw/Popcat-20-Kids-Sandals.jpg',
           price: 160
         },
         {
           id: 7,
-          name: 'Air Jordan Limited',
-          imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
+          name: 'PUMA x PEANUTS Trainers',
+          imageUrl: 'https://i.ibb.co/vL39v0C/PUMA-x-PEANUTS-Serve-Pro-Babies-Trainers.jpg',
           price: 190
         },
         {
           id: 8,
-          name: 'Timberlands',
-          imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+          name: 'Rupture Kids Trainers',
+          imageUrl: 'https://i.ibb.co/SfHXv5C/Rupture-NRGY-Kids-Trainers.jpg',
           price: 200
         }
       ]
@@ -122,32 +122,32 @@ const SHOP_DATA = [
       items: [
         {
           id: 1,
-          name: 'Black Jean Shearling',
-          imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
+          name: 'Rocket Backpack',
+          imageUrl: 'https://i.ibb.co/4fNn7JZ/Rockets-Novelty-Rocket-Backpack.jpg',
           price: 125
         },
         {
           id: 2,
-          name: 'Blue Jean Jacket',
-          imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+          name: 'Summer Sharks Backpack',
+          imageUrl: 'https://i.ibb.co/1z5f80G/Summer-Sharks-Kids-Mini-Backpack.jpg',
           price: 90
         },
         {
           id: 3,
-          name: 'Grey Jean Jacket',
-          imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
+          name: 'Animals Youth Backpack',
+          imageUrl: 'https://i.ibb.co/Tkfj508/Animals-Youth-Backpack.jpg',
           price: 90
         },
         {
           id: 4,
-          name: 'Brown Shearling',
-          imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
+          name: 'Animal Youth Waist Bag',
+          imageUrl: 'https://i.ibb.co/pzg9jWs/Animals-Youth-Waist-Bag.jpg',
           price: 165
         },
         {
           id: 5,
-          name: 'Tan Trench',
-          imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+          name: 'Ashley Party Bag',
+          imageUrl: 'https://i.ibb.co/F0bYrrr/Ashley-Party-Bag.jpg',
           price: 185
         }
       ]
@@ -159,44 +159,44 @@ const SHOP_DATA = [
       items: [
         {
           id: 1,
-          name: 'Blue Tanktop',
-          imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+          name: 'Park Dogs Ayda Dress',
+          imageUrl: 'https://i.ibb.co/16GBFVp/Small-Park-Dogs-Ayda-Dress.jpg',
           price: 25
         },
         {
           id: 2,
-          name: 'Floral Blouse',
-          imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+          name: 'Solid Rosie Dress',
+          imageUrl: 'https://i.ibb.co/D9QzhWT/Solid-Rosie-Pinafore-Dress.jpg',
           price: 20
         },
         {
           id: 3,
-          name: 'Floral Dress',
-          imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+          name: 'Summer Floral Dress',
+          imageUrl: 'https://i.ibb.co/4dfjv6q/Spaced-Summer-Floral-Shirred-Midi-Dress.jpg',
           price: 80
         },
         {
           id: 4,
-          name: 'Red Dots Dress',
-          imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
+          name: 'Cherries Ella Dress',
+          imageUrl: 'https://i.ibb.co/ZWbzx1g/Cherries-Ella-Dress.jpg',
           price: 80
         },
         {
           id: 5,
-          name: 'Striped Sweater',
-          imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
+          name: 'Ice Creams Shirred Dress',
+          imageUrl: 'https://i.ibb.co/7zCvXDn/Mini-Ice-Creams-Ella-Shirred-Dress.jpg',
           price: 45
         },
         {
           id: 6,
-          name: 'Yellow Track Suit',
-          imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+          name: 'Lovebugs Isabella Dress',
+          imageUrl: 'https://i.ibb.co/cDhZZkx/Mini-Lovebugs-Embroidered-Isabella-Dress.jpg',
           price: 135
         },
         {
           id: 7,
-          name: 'White Blouse',
-          imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+          name: 'Stars Velvet Dress',
+          imageUrl: 'https://i.ibb.co/MgPW0Df/Shooting-Stars-Velvet-Dress.jpg',
           price: 20
         }
       ]
@@ -204,42 +204,42 @@ const SHOP_DATA = [
     {
       id: 5,
       title: 'Boys',
-      routeName: 'mens',
+      routeName: 'boys',
       items: [
         {
           id: 1,
-          name: 'Camo Down Vest',
-          imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
+          name: 'Short Sleeve Oliver Shirt',
+          imageUrl: 'https://i.ibb.co/F71tMFt/Small-Summer-Sharks-Short-Sleeve-Oliver-Shirt.jpg',
           price: 325
         },
         {
           id: 2,
-          name: 'Floral T-shirt',
-          imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
+          name: 'Summer Shark T-shirt',
+          imageUrl: 'https://i.ibb.co/RHMnkGy/Summer-Shark-Short-Sleeve-Everyday-T-Shirt.jpg',
           price: 20
         },
         {
           id: 3,
-          name: 'Black & White Longsleeve',
-          imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+          name: 'Ziggy Polo',
+          imageUrl: 'https://i.ibb.co/527tJHs/Ziggy-Polo.jpg',
           price: 25
         },
         {
           id: 4,
-          name: 'Pink T-shirt',
-          imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+          name: 'Downtown Short Sleeve Tee',
+          imageUrl: 'https://i.ibb.co/sg5LR6P/Downtown-Short-Sleeve-Tee.jpg',
           price: 25
         },
         {
           id: 5,
-          name: 'Jean Long Sleeve',
-          imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+          name: 'Max Long Sleeve Tee',
+          imageUrl: 'https://i.ibb.co/rcnD781/Max-Long-Sleeve-Tee.jpg',
           price: 40
         },
         {
           id: 6,
-          name: 'Burgundy T-shirt',
-          imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+          name: 'Otis Muscle Tank',
+          imageUrl: 'https://i.ibb.co/WyngpDZ/Otis-Muscle-Tank.jpg',
           price: 25
         }
       ]

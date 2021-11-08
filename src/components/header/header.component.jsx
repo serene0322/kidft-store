@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
 //special syntax to import SVG file
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 
@@ -15,7 +18,10 @@ const Header = () => (
         <div className='options'>
             <Link className='option' to='/shop'>SHOP</Link>
             <Link className='option' to='/shop'>CONTACT</Link>
+            <Link className='option' to='/signin'>SIGN IN</Link>
+            <CartIcon />
         </div>
+        {/* <CartDropdown /> */}
     </div>
 );
 

@@ -3,10 +3,12 @@ import React from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
+import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+
 import './sign-up.styles.scss';
 
 class SignUp extends React.Component {
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -17,22 +19,46 @@ class SignUp extends React.Component {
         };
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = async event => {
+        event.preventDefault();
 
-        this.setState({ email: '', password: '' }); //clear out the fields
-    }
+        const { displayName, email, password, confirmPassword } = this.state;
+
+        //check if the password match or not
+        if (password !== confirmPassword) {
+            alert("password don't match");
+            return; //don't do anything else if the password not match
+        }
+
+        try {
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+
+            //if success, reset our state
+            await createUserProfileDocument(user, { displayName });
+
+            //this will clear our form
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+             })
+
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     handleChange = (e) => {
         //to pull both the value and name of our event.target
-        const { value, name } = e.target;
+        const { name, value } = e.target;
 
         this.setState({ [name]: value });
-    }
+    };
 
     render() {
-        const {displayName, email, password, confirmPassword} = this.state;
-        return(
+        const { displayName, email, password, confirmPassword } = this.state;
+        return (
             <div className='sign-up'>
                 <h2 className='title'>I do not have an account</h2>
                 <span> Sign up with your email and password</span>

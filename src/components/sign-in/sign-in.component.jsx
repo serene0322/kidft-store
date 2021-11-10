@@ -3,7 +3,7 @@ import React from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, firestore, signInWithGoogle } from "../../firebase/firebase.utils";
 
 import './sign-in.styles.scss';
 
@@ -18,18 +18,28 @@ class SignIn extends React.Component {
         }
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async e => {
         e.preventDefault();
 
-        this.setState({ email: '', password: '' }); //clear out the fields
-    }
+        const { email, password } = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            //clear the state if success sign in
+            this.setState({ email: '', password: '' });
+        } catch (error) {
+            console.log(error);
+            //alert user whether email or password is wrong
+            alert(error.message);
+        }
+    };
 
     handleChange = (e) => {
         //to pull both the value and name of our event.target
         const { value, name } = e.target;
 
         this.setState({ [name]: value });
-    }
+    };
 
     render() {
         return (
@@ -46,14 +56,14 @@ class SignIn extends React.Component {
                         label='Email'
                         required
                     />
-   
-                    <FormInput 
-                        name="password" 
-                        type="password" 
-                        value={this.state.password} 
-                        handleChange={this.handleChange} 
+
+                    <FormInput
+                        name="password"
+                        type="password"
+                        value={this.state.password}
+                        handleChange={this.handleChange}
                         label='Password'
-                        required 
+                        required
                     />
                     <div className="buttons">
                         <CustomButton type="submit"> Sign in </CustomButton>

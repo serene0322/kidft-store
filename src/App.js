@@ -38,7 +38,8 @@ class App extends React.Component {
             }
           });
 
-          console.log(this.state);
+          //used to check if the sign in and sign out function is success or not
+          //console.log(this.state);
 
         });
       }

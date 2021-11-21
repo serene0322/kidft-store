@@ -66,49 +66,49 @@ const SHOP_DATA = [
       routeName: 'shoes',
       items: [
         {
-          id: 1,
+          id: 10,
           name: 'R78 Kids Trainers',
           imageUrl: 'https://i.ibb.co/FwcgN9v/R78-Kids-Trainers.jpg',
           price: 220
         },
         {
-          id: 2,
+          id: 11,
           name: 'Smash Summer Animals Trainers',
           imageUrl: 'https://i.ibb.co/rvVf5Pk/Smash-v2-Summer-Animals-Kids-Trainers.jpg',
           price: 280
         },
         {
-          id: 3,
+          id: 12,
           name: 'Stepfleex Kids Trainers',
           imageUrl: 'https://i.ibb.co/wpJP4pJ/Stepfleex-2-SL-VE-V-Kids-Trainers.jpg',
           price: 110
         },
         {
-          id: 4,
+          id: 13,
           name: 'Cabana Racer Baby Trainers',
           imageUrl: 'https://i.ibb.co/9tsYWZX/Cabana-Racer-SL-Baby-Trainers.jpg',
           price: 160
         },
         {
-          id: 5,
+          id: 14,
           name: 'Multiflex Mesh Kids Trainers',
           imageUrl: 'https://i.ibb.co/grxnsW9/Multiflex-Mesh-V-Kids-Trainers.jpg',
           price: 160
         },
         {
-          id: 6,
+          id: 15,
           name: 'Popcat Kids Sandals',
           imageUrl: 'https://i.ibb.co/VL9cyhw/Popcat-20-Kids-Sandals.jpg',
           price: 160
         },
         {
-          id: 7,
+          id: 16,
           name: 'PUMA x PEANUTS Trainers',
           imageUrl: 'https://i.ibb.co/vL39v0C/PUMA-x-PEANUTS-Serve-Pro-Babies-Trainers.jpg',
           price: 190
         },
         {
-          id: 8,
+          id: 17,
           name: 'Rupture Kids Trainers',
           imageUrl: 'https://i.ibb.co/SfHXv5C/Rupture-NRGY-Kids-Trainers.jpg',
           price: 200
@@ -121,31 +121,31 @@ const SHOP_DATA = [
       routeName: 'bags',
       items: [
         {
-          id: 1,
+          id: 18,
           name: 'Rocket Backpack',
           imageUrl: 'https://i.ibb.co/4fNn7JZ/Rockets-Novelty-Rocket-Backpack.jpg',
           price: 125
         },
         {
-          id: 2,
+          id: 19,
           name: 'Summer Sharks Backpack',
           imageUrl: 'https://i.ibb.co/1z5f80G/Summer-Sharks-Kids-Mini-Backpack.jpg',
           price: 90
         },
         {
-          id: 3,
+          id: 20,
           name: 'Animals Youth Backpack',
           imageUrl: 'https://i.ibb.co/Tkfj508/Animals-Youth-Backpack.jpg',
           price: 90
         },
         {
-          id: 4,
+          id: 21,
           name: 'Animal Youth Waist Bag',
           imageUrl: 'https://i.ibb.co/pzg9jWs/Animals-Youth-Waist-Bag.jpg',
           price: 165
         },
         {
-          id: 5,
+          id: 22,
           name: 'Ashley Party Bag',
           imageUrl: 'https://i.ibb.co/F0bYrrr/Ashley-Party-Bag.jpg',
           price: 185
@@ -158,43 +158,43 @@ const SHOP_DATA = [
       routeName: 'girls',
       items: [
         {
-          id: 1,
+          id: 23,
           name: 'Park Dogs Ayda Dress',
           imageUrl: 'https://i.ibb.co/16GBFVp/Small-Park-Dogs-Ayda-Dress.jpg',
           price: 25
         },
         {
-          id: 2,
+          id: 24,
           name: 'Solid Rosie Dress',
           imageUrl: 'https://i.ibb.co/D9QzhWT/Solid-Rosie-Pinafore-Dress.jpg',
           price: 20
         },
         {
-          id: 3,
+          id: 25,
           name: 'Summer Floral Dress',
           imageUrl: 'https://i.ibb.co/4dfjv6q/Spaced-Summer-Floral-Shirred-Midi-Dress.jpg',
           price: 80
         },
         {
-          id: 4,
+          id: 26,
           name: 'Cherries Ella Dress',
           imageUrl: 'https://i.ibb.co/ZWbzx1g/Cherries-Ella-Dress.jpg',
           price: 80
         },
         {
-          id: 5,
+          id: 27,
           name: 'Ice Creams Shirred Dress',
           imageUrl: 'https://i.ibb.co/7zCvXDn/Mini-Ice-Creams-Ella-Shirred-Dress.jpg',
           price: 45
         },
         {
-          id: 6,
+          id: 28,
           name: 'Lovebugs Isabella Dress',
           imageUrl: 'https://i.ibb.co/cDhZZkx/Mini-Lovebugs-Embroidered-Isabella-Dress.jpg',
           price: 135
         },
         {
-          id: 7,
+          id: 29,
           name: 'Stars Velvet Dress',
           imageUrl: 'https://i.ibb.co/MgPW0Df/Shooting-Stars-Velvet-Dress.jpg',
           price: 20
@@ -207,37 +207,37 @@ const SHOP_DATA = [
       routeName: 'boys',
       items: [
         {
-          id: 1,
+          id: 30,
           name: 'Short Sleeve Oliver Shirt',
           imageUrl: 'https://i.ibb.co/F71tMFt/Small-Summer-Sharks-Short-Sleeve-Oliver-Shirt.jpg',
           price: 325
         },
         {
-          id: 2,
+          id: 31,
           name: 'Summer Shark T-shirt',
           imageUrl: 'https://i.ibb.co/RHMnkGy/Summer-Shark-Short-Sleeve-Everyday-T-Shirt.jpg',
           price: 20
         },
         {
-          id: 3,
+          id: 32,
           name: 'Ziggy Polo',
           imageUrl: 'https://i.ibb.co/527tJHs/Ziggy-Polo.jpg',
           price: 25
         },
         {
-          id: 4,
+          id: 33,
           name: 'Downtown Short Sleeve Tee',
           imageUrl: 'https://i.ibb.co/sg5LR6P/Downtown-Short-Sleeve-Tee.jpg',
           price: 25
         },
         {
-          id: 5,
+          id: 34,
           name: 'Max Long Sleeve Tee',
           imageUrl: 'https://i.ibb.co/rcnD781/Max-Long-Sleeve-Tee.jpg',
           price: 40
         },
         {
-          id: 6,
+          id: 35,
           name: 'Otis Muscle Tank',
           imageUrl: 'https://i.ibb.co/WyngpDZ/Otis-Muscle-Tank.jpg',
           price: 25

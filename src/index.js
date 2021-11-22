@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'; //component that we are going to wrap around our application
 import { Provider } from 'react-redux'; //provider is a component to wrap around the entire application bc we want everything inside it have access to this store object that we get from redux
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
-import store from './redux/store';
+import { store, persistor } from './redux/store';
 
 import './index.css';
 import App from './App';
@@ -16,7 +17,10 @@ ReactDOM.render(
   <Provider store={store}>
     {/*give <App> functionality of routing*/}
     <BrowserRouter>
-      <App />
+      {/* let application have access to persistence flow itself */}
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

@@ -4,6 +4,7 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import { toast } from "react-toastify";
 
 import './sign-up.styles.scss';
 
@@ -26,7 +27,7 @@ class SignUp extends React.Component {
 
         //check if the password match or not
         if (password !== confirmPassword) {
-            alert("password don't match");
+            toast.error("password don't match");
             return; //don't do anything else if the password not match
         }
 
@@ -46,6 +47,7 @@ class SignUp extends React.Component {
 
         } catch (e) {
             console.log(e);
+            toast.error(e.message);
         }
     };
 

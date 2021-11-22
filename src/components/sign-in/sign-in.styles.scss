@@ -11,4 +11,16 @@
         display: flex;
         justify-content: space-between;
     }
+
+    .forgot-password {
+        
+        .text-link {
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            font-weight: 900;
+            color:slateblue;
+        }
+    }
 }

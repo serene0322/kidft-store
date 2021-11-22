@@ -4,8 +4,10 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { toast } from "react-toastify";
 
 import './sign-in.styles.scss';
+import { Link } from "react-router-dom";
 
 //use class component because need to store what users typing in
 class SignIn extends React.Component {
@@ -30,7 +32,7 @@ class SignIn extends React.Component {
         } catch (error) {
             console.log(error);
             //alert user whether email or password is wrong
-            alert(error.message);
+            toast.error(error.message);
         }
     };
 
@@ -65,6 +67,9 @@ class SignIn extends React.Component {
                         label='Password'
                         required
                     />
+                    <Link to='/forgot-password' className='forgot-password'>
+                        Forgot Password?
+                    </Link>
                     <div className="buttons">
                         <CustomButton type="submit"> Sign in </CustomButton>
                         <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>

@@ -1,3 +1,5 @@
+//decide on how it should render the list of items
+
 import React from "react";
 
 import CollectionItem from "../collection-item/collection-item.component";

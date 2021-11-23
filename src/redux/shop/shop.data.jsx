@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-    {
+const SHOP_DATA = {
+    hats: {
       id: 1,
       title: 'Hats',
       routeName: 'hats',
@@ -60,8 +60,45 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    bags: {
       id: 2,
+      title: 'Bags',
+      routeName: 'bags',
+      items: [
+        {
+          id: 18,
+          name: 'Rocket Backpack',
+          imageUrl: 'https://i.ibb.co/4fNn7JZ/Rockets-Novelty-Rocket-Backpack.jpg',
+          price: 125
+        },
+        {
+          id: 19,
+          name: 'Summer Sharks Backpack',
+          imageUrl: 'https://i.ibb.co/1z5f80G/Summer-Sharks-Kids-Mini-Backpack.jpg',
+          price: 90
+        },
+        {
+          id: 20,
+          name: 'Animals Youth Backpack',
+          imageUrl: 'https://i.ibb.co/Tkfj508/Animals-Youth-Backpack.jpg',
+          price: 90
+        },
+        {
+          id: 21,
+          name: 'Animal Youth Waist Bag',
+          imageUrl: 'https://i.ibb.co/pzg9jWs/Animals-Youth-Waist-Bag.jpg',
+          price: 165
+        },
+        {
+          id: 22,
+          name: 'Ashley Party Bag',
+          imageUrl: 'https://i.ibb.co/F0bYrrr/Ashley-Party-Bag.jpg',
+          price: 185
+        }
+      ]
+    },
+    shoes: {
+      id: 3,
       title: 'Shoes',
       routeName: 'shoes',
       items: [
@@ -115,44 +152,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
-      id: 3,
-      title: 'Bags',
-      routeName: 'bags',
-      items: [
-        {
-          id: 18,
-          name: 'Rocket Backpack',
-          imageUrl: 'https://i.ibb.co/4fNn7JZ/Rockets-Novelty-Rocket-Backpack.jpg',
-          price: 125
-        },
-        {
-          id: 19,
-          name: 'Summer Sharks Backpack',
-          imageUrl: 'https://i.ibb.co/1z5f80G/Summer-Sharks-Kids-Mini-Backpack.jpg',
-          price: 90
-        },
-        {
-          id: 20,
-          name: 'Animals Youth Backpack',
-          imageUrl: 'https://i.ibb.co/Tkfj508/Animals-Youth-Backpack.jpg',
-          price: 90
-        },
-        {
-          id: 21,
-          name: 'Animal Youth Waist Bag',
-          imageUrl: 'https://i.ibb.co/pzg9jWs/Animals-Youth-Waist-Bag.jpg',
-          price: 165
-        },
-        {
-          id: 22,
-          name: 'Ashley Party Bag',
-          imageUrl: 'https://i.ibb.co/F0bYrrr/Ashley-Party-Bag.jpg',
-          price: 185
-        }
-      ]
-    },
-    {
+   girls: {
       id: 4,
       title: 'Girls',
       routeName: 'girls',
@@ -201,7 +201,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    boys: {
       id: 5,
       title: 'Boys',
       routeName: 'boys',
@@ -244,6 +244,6 @@ const SHOP_DATA = [
         }
       ]
     }
-  ];
+};
  
   export default SHOP_DATA;

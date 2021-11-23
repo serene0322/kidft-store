@@ -12,6 +12,7 @@ import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import ForgotPasswordPage from './pages/forgot-password/forgot-password.component';
+import ContactPage from './pages/contact/contact.component';
 
 import Header from './components/header/header.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -56,6 +57,7 @@ class App extends React.Component {
           <Route exact path="/signin" render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
           <Route path="/forgot-password" component={ForgotPasswordPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
+          <Route exact path="/contact" component={ContactPage} />
         </Switch>
         <ToastContainer />
       </div>

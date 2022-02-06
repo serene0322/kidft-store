@@ -25,6 +25,7 @@
     "redux-persist": "^6.0.0",
     "reselect": "^4.1.4",
     "sass": "^1.43.3",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -24,7 +24,7 @@ export function* signInWithGoogle() {
         yield getSnapshotFromUserAuth(user);
     } catch (error) {
         yield put(signInFailure(error));
-        toast.error(error.message);
+        yield toast.error(error.message);
     }
 }
 
@@ -34,7 +34,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
         yield getSnapshotFromUserAuth(user);
     } catch (error) {
         put(signInFailure(error));
-        toast.error(error.message);
+        yield toast.error(error.message);
     }
 }
 
@@ -52,6 +52,7 @@ export function* signOut() {
     try {
         yield auth.signOut();
         yield put(signOutSuccess());
+        yield toast.success('Sign Out Successfully.');
     } catch (error) {
         yield put(signOutFailure(error));
     }
@@ -63,7 +64,7 @@ export function* signUp({ payload: { email, password, displayName } }) {
         yield put(signUpSuccess({ user, additionalData: { displayName } }));
     } catch (error) {
         put(signUpFailure(error));
-        toast.error(error.message);
+        yield toast.error(error.message);
     }
 }
 

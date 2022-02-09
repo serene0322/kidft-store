@@ -5,6 +5,7 @@ import UserActionTypes from './user.types';
 import { signInSuccess, signInFailure, signOutSuccess, signOutFailure, signUpSuccess, signUpFailure } from './user.actions';
 
 import { auth, googleProvider, createUserProfileDocument, getCurrentUser } from '../../firebase/firebase.utils';
+import { toast } from 'react-toastify';
 
 //listen for google sign in start and trigger actual sign from saga
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
@@ -23,6 +24,7 @@ export function* signInWithGoogle() {
         yield getSnapshotFromUserAuth(user);
     } catch (error) {
         yield put(signInFailure(error));
+        toast.error(error.message);
     }
 }
 
@@ -32,6 +34,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
         yield getSnapshotFromUserAuth(user);
     } catch (error) {
         put(signInFailure(error));
+        toast.error(error.message);
     }
 }
 
@@ -59,7 +62,8 @@ export function* signUp({ payload: { email, password, displayName } }) {
         const { user } = yield auth.createUserWithEmailAndPassword(email, password);
         yield put(signUpSuccess({ user, additionalData: { displayName } }));
     } catch (error) {
-        put(signUpFailure(error))
+        put(signUpFailure(error));
+        toast.error(error.message);
     }
 }
 

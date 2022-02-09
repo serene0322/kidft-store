@@ -5,7 +5,6 @@ import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
 import { googleSignInStart, emailSignInStart } from "../../redux/user/user.actions";
-import { toast } from "react-toastify";
 
 import './sign-in.styles.scss';
 import { Link } from "react-router-dom";
@@ -27,16 +26,6 @@ class SignIn extends React.Component {
         const { email, password } = this.state;
 
         emailSignInStart(email, password);
-        //delete
-        // try {
-        //     await auth.signInWithEmailAndPassword(email, password);
-        //     //clear the state if success sign in
-        //     this.setState({ email: '', password: '' });
-        // } catch (error) {
-        //     console.log(error);
-        //     //alert user whether email or password is wrong
-        //     toast.error(error.message);
-        // }
     };
 
     handleChange = (e) => {

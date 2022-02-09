@@ -31,7 +31,7 @@ class SignUp extends React.Component {
 
         //check if the password match or not
         if (password !== confirmPassword) {
-            toast.error("password don't match");
+            toast.error("Password is not match");
             return; //don't do anything else if the password not match
         }
 

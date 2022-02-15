@@ -3,7 +3,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 
-import CollectionItem from "../collection-item/collection-item.component";
+import CollectionItemCantclick from "../collection-item/collection-item-cantclick";
 
 import './collection-preview.styles.scss'
 
@@ -16,7 +16,7 @@ const CollectionPreview = ({ title, items, history, match }) => (
                 items
                     .filter((item, index) => index < 4) //to filter only 4 items
                     .map(item => (
-                        <CollectionItem key={item.id} item={item} />
+                        <CollectionItemCantclick key={item.id} item={item} />
                     ))
             }
         </div>

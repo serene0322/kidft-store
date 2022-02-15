@@ -17,9 +17,9 @@ const CollectionPage = ({ collection }) => {
     return (
         <div className='collection-page'>
             <h2 className='title'>{title.toUpperCase()}</h2>
-            <SearchBar 
+            <SearchBar
                 placeholder='Search Products...'
-                handleChange={e => {setSearchTerm(e.target.value)}}
+                handleChange={e => { setSearchTerm(e.target.value) }}
             />
             <div className='items'>
                 {

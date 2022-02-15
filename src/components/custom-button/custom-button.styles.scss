@@ -33,6 +33,16 @@
       }
     }
 
+    &.addCart {
+      background-color: #D3D3D3;
+      color: black;
+
+      &:hover {
+        background-color: #808080;
+        border: none;
+      }
+    }
+
     &.inverted {
       background-color: white;
       color: black;

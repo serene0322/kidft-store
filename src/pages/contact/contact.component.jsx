@@ -29,7 +29,7 @@ const ContactPage = () => {
 
     return (
         <div className='contact-page'>
-            <h2>Any Feedback To Us</h2>
+            <h2>Any Feedback To Us ?</h2>
             <span>Please fill up the details below to contact us.</span>
 
             <form className='row' onSubmit={sendEmail}>

@@ -13,7 +13,7 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckoutPage from './pages/checkout/checkout.component';
 import ForgotPasswordPage from './pages/forgot-password/forgot-password.component';
 import ContactPage from './pages/contact/contact.component';
-
+import ProductDetailsPage from './pages/product-detail/product-details.component';
 import Header from './components/header/header.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -32,6 +32,7 @@ const App = ({ checkUserSession, currentUser }) => {
       <FloatButton />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/shop/:collectionId/:itemId" component={ProductDetailsPage} />
         <Route path="/shop" component={ShopPage} />
         <Route exact path="/signin" render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         <Route path="/forgot-password" component={ForgotPasswordPage} />
@@ -42,6 +43,7 @@ const App = ({ checkUserSession, currentUser }) => {
     </div>
   );
 }
+
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser

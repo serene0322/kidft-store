@@ -18,13 +18,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-app.use(cors(express.static(__dirname + "/client")));
+//app.use(cors(express.static(__dirname + "/client")));
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
-  res.send("Server Running");
-});
+// app.get("/", (req, res) => {
+//   res.send("Server Running");
+// });
 
 io.on("connection", (socket) => {
   socket.emit("me", socket.id);

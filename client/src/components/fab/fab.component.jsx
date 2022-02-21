@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Fab, Action } from "react-tiny-fab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCommentDots, faComments, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { faCommentDots, faVideo } from "@fortawesome/free-solid-svg-icons";
 
 import 'react-tiny-fab/dist/styles.css';
 

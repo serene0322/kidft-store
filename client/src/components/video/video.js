@@ -174,7 +174,7 @@ const Video = () => {
                 placeholder="your message"
                 allowClear
                 className="input_msg"
-                enterButton="Send 🚀"
+                enterButton="Send"
                 onChange={(e) => setSendMsg(e.target.value)}
                 value={sendMsg}
                 size="large"

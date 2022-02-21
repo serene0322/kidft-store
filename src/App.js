@@ -3,9 +3,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { ToastContainer } from 'react-toastify';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
+import "antd/dist/antd.css";
+import "font-awesome/css/font-awesome.min.css";
 
 import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component';
@@ -19,6 +22,7 @@ import Header from './components/header/header.component';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import FloatButton from './components/fab/fab.component';
+import VideoCallPage from './pages/video-call/video-call.component';
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -38,7 +42,12 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route path="/forgot-password" component={ForgotPasswordPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route exact path="/contact" component={ContactPage} />
+        <Route path="/videocall" component={VideoCallPage} />
       </Switch>
+      <MessengerCustomerChat
+        pageId="109133521705074"
+        appId="979559789650297"
+      />,
       <ToastContainer />
     </div>
   );

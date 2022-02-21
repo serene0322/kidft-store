@@ -9,6 +9,9 @@ import { store, persistor } from './redux/store';
 import './index.css';
 import App from './App';
 
+import * as serviceWorker from './serviceWorker';
+import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   //parent of everything inside our application
@@ -25,4 +28,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
+
+reportWebVitals();
+serviceWorker.register();
 

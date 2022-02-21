@@ -19,7 +19,7 @@ const StripeCheckoutButton = ({ price }) => {
             billingAddress
             shippingAddress
             image='https://svgshare.com/i/cE3.svg'
-            description={`Your total is RM${price}`}
+            description={`Your total is RM${price.toFixed(2)}`}
             amount={priceForStripe}
             panelLabel='Pay Now'
             currency="MYR"

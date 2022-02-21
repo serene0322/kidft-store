@@ -7,27 +7,22 @@ import { faCommentDots, faComments, faVideo } from "@fortawesome/free-solid-svg-
 
 import 'react-tiny-fab/dist/styles.css';
 
+const position = {
+    bottom: "1rem",
+    left: "1rem"
+}
 
 const FloatButton = () => (
     <div>
         <Fab
             alwaysShowTitle={true}
+            style={position}
             icon={<FontAwesomeIcon icon={faCommentDots} />}
             event='hover'
             mainButtonStyles={{
                 backgroundColor: "#85C1E9"
             }}
         >
-        <Link to='/chat'>
-            <Action
-                text="Text Chat"
-                style={{
-                    backgroundColor: "#7DCEA0"
-                }}
-            >
-                <FontAwesomeIcon icon={faComments} />
-            </Action>
-        </Link>
         <Link to='/videocall'>
             <Action
                 text="Video Call"
@@ -38,16 +33,6 @@ const FloatButton = () => (
                 <FontAwesomeIcon icon={faVideo} />
             </Action>
         </Link>
-        {/*<Action
-        text="Email"
-        onClick={handleEmailOnClick}
-        />
-        <Action
-            text="Help"
-            onClick={handleHelpOnClick}
-            >
-            <i className="fa fa-help" />
-        </Action> */}
         </Fab>
     </div>
 );

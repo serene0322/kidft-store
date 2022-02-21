@@ -9,7 +9,16 @@ const io = require("socket.io")(server, {
   },
 });
 
-app.use(cors());
+if (process.env.NODE_ENV === 'production') {
+  app.use(cors(express.static('client/build')))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')) // relative path
+  })
+}
+
+
+app.use(cors(express.static(__dirname + "/client")));
 
 const PORT = process.env.PORT || 5000;
 

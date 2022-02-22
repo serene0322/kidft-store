@@ -7,8 +7,6 @@ import { message } from "antd";
 
 //const URL = "http://localhost:5000/";
 const URL = "https://kidft-store.herokuapp.com/"
-//const URL = "https://fathomless-tundra-67025.herokuapp.com/";
-// const SERVER_URL = "http://localhost:5000/";
 
 export const socket = io(URL);
 

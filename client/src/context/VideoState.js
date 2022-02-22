@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import VideoContext from "./VideoContext";
+//used for real-time data transfer
 import { io } from "socket.io-client"; //provide communication between client and server
 import Peer from "simple-peer";
 import { message } from "antd";

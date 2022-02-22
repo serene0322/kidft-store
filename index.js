@@ -17,9 +17,11 @@ app.get("/", (req, res) => {
   res.send("Server Running");
 });
 
+//run when we have a client connection on our io instance
 io.on("connection", (socket) => {
   socket.emit("me", socket.id);
 
+  //just the specific socket that just joined
   socket.on("callUser", ({ userToCall, signalData, from, name }) => {
     io.to(userToCall).emit("callUser", {
       signal: signalData,
@@ -44,6 +46,7 @@ io.on("connection", (socket) => {
     });
     io.to(data.to).emit("callAccepted", data);
   });
+  
   socket.on("endCall", ({ id }) => {
     io.to(id).emit("endCall");
   });

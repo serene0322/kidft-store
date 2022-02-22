@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import 'react-toastify/dist/ReactToastify.css';
 
-import './App.css';
 import "antd/dist/antd.css";
 import "font-awesome/css/font-awesome.min.css";
 
@@ -19,6 +18,7 @@ import ContactPage from './pages/contact/contact.component';
 import ProductDetailsPage from './pages/product-detail/product-details.component';
 import Header from './components/header/header.component';
 
+import { GlobalStyle } from './global.styles';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import FloatButton from './components/fab/fab.component';
@@ -32,6 +32,7 @@ const App = ({ checkUserSession, currentUser }) => {
 
   return (
     <div>
+      <GlobalStyle />
       <Header />
       <FloatButton />
       <Switch>

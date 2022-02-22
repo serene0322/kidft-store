@@ -10,7 +10,7 @@ const CollectionItem = ({ item, addItem, history, match }) => {
     const { name, price, imageUrl } = item;
 
     return (
-        <div className='collection-item'>
+        <div className='collection-item1'>
             <div
                 className='image'
                 style={{

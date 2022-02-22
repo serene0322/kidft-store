@@ -41,10 +41,13 @@ const VideoState = ({ children }) => {
         setStream(currentStream);
         myVideo.current.srcObject = currentStream;
       });
+
     if (localStorage.getItem("name")) {
       setName(localStorage.getItem("name"));
     }
+
     socket.on("me", (id) => setMe(id));
+
     socket.on("endCall", () => {
       window.location.reload();
     });
@@ -82,6 +85,7 @@ const VideoState = ({ children }) => {
   //   console.log(chat);
   // }, [chat]);
 
+  //function when user answer a call
   const answerCall = () => {
     setCallAccepted(true);
     setOtherUser(call.from);
@@ -107,6 +111,7 @@ const VideoState = ({ children }) => {
     console.log(connectionRef.current);
   };
 
+  //fucntion to call a user
   const callUser = (id) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
     setOtherUser(id);
@@ -238,6 +243,7 @@ const VideoState = ({ children }) => {
   const leaveCall1 = () => {
     socket.emit("endCall", { id: otherUser });
   };
+
   const sendMsg = (value) => {
     socket.emit("msgUser", { name, to: otherUser, msg: value, sender: name });
     let msg = {};

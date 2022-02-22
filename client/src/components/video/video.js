@@ -1,12 +1,9 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import VideoContext from "../../context/VideoContext";
 import "./video.css";
-import { Card, Modal, Button, Input, notification, Avatar } from "antd";
-import Man from "../../assets/man.svg"
+import { Modal, Input, notification, Avatar } from "antd";
 import VideoIcon from "../../assets/video.svg";
-import { io } from "socket.io-client";
 import VideoOff from "../../assets/video-off.svg";
-// import Profile from "../../assests/profile.svg";
 import Msg_Illus from "../../assets/msg_illus.svg";
 import Msg from "../../assets/msg.svg";
 import ScreenShare from "../../assets/share_screen.svg";
@@ -14,7 +11,6 @@ import { UserOutlined, MessageOutlined } from "@ant-design/icons";
 
 import { socket } from "../../context/VideoState";
 
-// const socket = io()
 const { Search } = Input;
 const Video = () => {
   const {
@@ -24,19 +20,13 @@ const Video = () => {
     userVideo,
     stream,
     name,
-    setName,
     callEnded,
-    me,
-    callUser,
-    leaveCall,
-    answerCall,
     sendMsg: sendMsgFunc,
     msgRcv,
     chat,
     setChat,
     userName,
     myVdoStatus,
-    screenShare,
     fullScreen,
     handleScreenSharing,
     userVdoStatus,
@@ -47,7 +37,9 @@ const Video = () => {
   } = useContext(VideoContext);
 
   const [sendMsg, setSendMsg] = useState("");
+  //to control the visibility of chat box
   const [isModalVisible, setIsModalVisible] = useState(false);
+
   socket.on("msgRcv", ({ name, msg: value, sender }) => {
     let msg = {};
     msg.msg = value;
@@ -57,6 +49,7 @@ const Video = () => {
     setChat([...chat, msg]);
   });
 
+  //scroll to bottom when new message come in
   const dummy = useRef();
 
   useEffect(() => {
@@ -72,15 +65,16 @@ const Video = () => {
     setSendMsg("");
   };
 
+  //pop up the notification of message received
   useEffect(() => {
     if (msgRcv.value && !isModalVisible) {
       notification.open({
         message: "",
         description: `${msgRcv.sender}: ${msgRcv.value}`,
-        icon: <MessageOutlined style={{ color: "#108ee9" }} />,
+        icon: <MessageOutlined style={{ color: "#0DBF8C" }} />,
       });
     }
-  }, [msgRcv]);
+  }, [msgRcv, isModalVisible]);
 
   return (
     <div className="grid">
@@ -154,7 +148,7 @@ const Video = () => {
               onCancel={() => showModal(false)}
               style={{ maxHeight: "100px" }}
             >
-              {chat.length ? (
+              {chat.length ? ( //show message if has, else show the img
                 <div className="msg_flex">
                   {chat.map((msg) => (
                     <div
@@ -171,7 +165,7 @@ const Video = () => {
                 </div>
               )}
               <Search
-                placeholder="your message"
+                placeholder="Type your message here..."
                 allowClear
                 className="input_msg"
                 enterButton="Send"
@@ -184,7 +178,7 @@ const Video = () => {
             {callAccepted && !callEnded && (
               <div
                 className="icons"
-                onClick={() => handleScreenSharing()} 
+                onClick={() => handleScreenSharing()}
                 tabIndex="0"
               >
                 <img src={ScreenShare} alt="share screen" />
@@ -217,7 +211,7 @@ const Video = () => {
           <div className="video-avatar-container">
             <video
               playsInline
-              ref={userVideo}             
+              ref={userVideo}
               onClick={fullScreen}
               autoPlay
               className="video-active"

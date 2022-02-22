@@ -8,7 +8,7 @@ import Options from "../../components/options/Options";
 const VideoCallPage = () => {
   useEffect(() => {
     if (!navigator.onLine) alert("Connect to internet!");
-  }, [navigator]);
+  }, []);
  
  useEffect(()=>{
     var cookies = document.cookie.split(";");
@@ -20,6 +20,7 @@ const VideoCallPage = () => {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
  }, [])
+ 
   return (
     <VideoState>
       <div className="App" style={{ height: "100%", width: "100%" }}>

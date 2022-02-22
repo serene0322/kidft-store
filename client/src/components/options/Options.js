@@ -12,7 +12,6 @@ import {
   InfoCircleOutlined,
   PhoneOutlined,
 } from "@ant-design/icons";
-import { socket } from "../../context/VideoState";
 
 const Options = () => {
   const [idToCall, setIdToCall] = useState(""); //let us use state in functional component
@@ -22,9 +21,6 @@ const Options = () => {
   const {
     call,
     callAccepted,
-    myVideo,
-    userVideo,
-    stream,
     name,
     setName,
     callEnded,
@@ -32,7 +28,6 @@ const Options = () => {
     callUser,
     leaveCall,
     answerCall,
-    otherUser,
     setOtherUser,
     leaveCall1,
   } = useContext(VideoContext);
@@ -52,12 +47,13 @@ const Options = () => {
     leaveCall1();
     window.location.reload();
   };
+
   useEffect(() => {
     if (call.isReceivingCall && !callAccepted) {
       setIsModalVisible(true);
       setOtherUser(call.from);
     } else setIsModalVisible(false);
-  }, [call.isReceivingCall]);
+  }, [call.isReceivingCall, call.from, callAccepted, setOtherUser]);
 
   return (
     <div className={classes.options}>
@@ -65,7 +61,7 @@ const Options = () => {
         <h2>Your Details</h2>
         <Input
           size="large"
-          placeholder="Your name"
+          placeholder="Your Name"
           prefix={<UserOutlined />}
           maxLength={15}
           suffix={<small>{name.length}/15</small>}
@@ -86,7 +82,7 @@ const Options = () => {
               tabIndex="0"
               onClick={() => message.success("Code copied successfully!")}
             >
-              Copy code
+              Copy Code
             </Button>
           </CopyToClipboard>
         </div>
@@ -95,7 +91,7 @@ const Options = () => {
         <h2>Make A Call</h2>
 
         <Input
-          placeholder="Enter code to call"
+          placeholder="Enter Code To Call"
           size="large"
           className={classes.inputgroup}
           value={idToCall}
@@ -103,7 +99,7 @@ const Options = () => {
           style={{ marginRight: "0.5rem", marginBottom: "0.5rem" }}
           prefix={<UserOutlined className="site-form-item-icon" />}
           suffix={
-            <Tooltip title="Enter code of the other user">
+            <Tooltip title="Enter code of other user to call him/her">
               <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
             </Tooltip>
           }

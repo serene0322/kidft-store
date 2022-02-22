@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 
 //run when we have a client connection on our io instance
 io.on("connection", (socket) => {
+  //set id for user
   socket.emit("me", socket.id);
 
   //just the specific socket that just joined
@@ -35,6 +36,7 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("updateUserMedia", { type, currentMediaStatus });
   });
 
+  //send message to user
   socket.on("msgUser", ({ name, to, msg, sender }) => {
     io.to(to).emit("msgRcv", { name, msg, sender });
   });
@@ -46,7 +48,8 @@ io.on("connection", (socket) => {
     });
     io.to(data.to).emit("callAccepted", data);
   });
-  
+
+  //reload the screen for the id that end call
   socket.on("endCall", ({ id }) => {
     io.to(id).emit("endCall");
   });

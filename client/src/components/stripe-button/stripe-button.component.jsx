@@ -1,5 +1,6 @@
 import React from "react";
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 
 import { toast } from "react-toastify";
 
@@ -8,8 +9,20 @@ const StripeCheckoutButton = ({ price }) => {
     const publishableKey = 'pk_test_51JyxnYA25hMsHVIHihdM8A7WJUGy9Ze8aPnasgzrHDQBBGEWBAChGbT8btVFJg2r1NbJsSRoLwYwy8qlCtu2ubQq00DOHMr7eS';
 
     const onToken = token => {
-        console.log(token);
-        toast.success('Payment Successful');
+        axios({
+            url: 'payment',
+            method: 'post',
+            data: {
+                amount: priceForStripe,
+                token
+            }
+        }).then(response => {
+            toast.success('Payment Successful');
+        }).catch(error => {
+            console.log('Payment error: ', JSON.parse(error));
+            toast.error('There was an issue with your payment. Please make sure you use the provided credit card.');
+        });
+        
     }
 
     return (

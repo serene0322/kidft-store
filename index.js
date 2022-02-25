@@ -1,6 +1,14 @@
-const app = require("express")();
+const app = require("express")(); //library that allow us to build an API server easily
 const server = require("http").createServer(app);
 const cors = require("cors"); //allow cross-domain request
+const bodyParser = require('body-parser');
+const path = require('path'); //allow us to dynamically build when we call it from our current directory to where we want to go
+
+//if we in development or testing, load dotenv into process environment
+//allow our process.env access the secret key
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const io = require("socket.io")(server, {
   cors: {
@@ -9,13 +17,25 @@ const io = require("socket.io")(server, {
   },
 });
 
-app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
-  res.send("Server Running");
-});
+app.use(bodyParser.json());
+//make sure the url strings are getting in and we passing out do not contain spaces or symbols
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors()); //cross origin request
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
+  });
+}
+
+// app.get("/", (req, res) => {
+//   res.send("Server Running");
+// });
 
 //run when we have a client connection on our io instance
 io.on("connection", (socket) => {
@@ -55,4 +75,23 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+server.listen(PORT, error => {
+  if (error) throw error;
+  console.log(`Server is running on port ${PORT}`);
+});
+
+app.post('/payment', (req, res) => {
+  const body = {
+    source: req.body.token.id,
+    amount: req.body.amount,
+    currency: 'myr'
+  };
+
+  stripe.charges.create(body, (stripeErr, stripeRes) => {
+    if (stripeErr) {
+      res.status(500).send({ error: stripeErr });
+    } else {
+      res.status(200).send({ success: stripeRes });
+    }
+  });
+});

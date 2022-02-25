@@ -24,8 +24,8 @@ const ProductPage = ({ collection, match, history, addItem }) => {
 
             <div className='slider'>
                 <SimpleImageSlider 
-                    width={550}
-                    height={600}
+                    width={450}
+                    height={450}
                     images={images}
                     showBullets={true}
                     showNavs={true}

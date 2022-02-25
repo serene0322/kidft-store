@@ -7,7 +7,8 @@
     @media screen and (max-width: 800px) {
         flex-direction: column;
         width: unset;
-        align-items: center;
+        // align-items: center;
+        // margin-left: 20px;
 
         *:first-child {
             margin-bottom: 15px;

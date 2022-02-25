@@ -10,6 +10,10 @@
     .buttons {
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 800px) {
+            justify-content: space-around;
+        }
     }
 
     .forgot-password {

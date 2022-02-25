@@ -11,7 +11,7 @@ import './collection-preview.styles.scss'
 const CollectionPreview = ({ title, items, history, match }) => (
     <div className='collection-preview'>
         <h1 className='title' onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)}>{title.toUpperCase()}</h1>
-        <div className='preview'>
+        <div className='preview' onClick={() => history.push(`${match.path}/${title.toLowerCase()}`)}>
             {
                 items
                     .filter((item, index) => index < 4) //to filter only 4 items

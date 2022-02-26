@@ -6,7 +6,8 @@ import Peer from "simple-peer";
 import { message } from "antd";
 
 //const URL = "http://localhost:5000/";
-const URL = "https://kidft-store.herokuapp.com/";
+//const URL = "https://kidft-store.herokuapp.com/";
+const URL = "https://kidft-store-client-server.herokuapp.com/";
 
 export const socket = io(URL);
 

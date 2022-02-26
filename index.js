@@ -1,3 +1,4 @@
+const express = require('express');
 const app = require("express")(); //library that allow us to build an API server easily
 const server = require("http").createServer(app);
 const cors = require("cors"); //allow cross-domain request

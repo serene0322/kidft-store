@@ -22,13 +22,6 @@
       position: absolute;
       top: 255px;
       display: none;
-
-      // @media screen and (max-width: 800px) {
-      //   display: block;
-      //   opacity: 0.9;
-      //   min-width: unset;
-      //   padding: 0 10px 0 10px;
-      // }
     }
   
     &:hover {
@@ -52,10 +45,18 @@
       .name {
         width: 80%;
         margin-bottom: 15px;
+
+        @media screen and (max-width: 915px) {
+          width: 65%;
+        }
       }
   
       .price {
         width: 20%;
+
+        @media screen and (max-width: 915px) {
+          width: 35%;
+        }
       }
 
       @media screen and (max-width: 800px) {

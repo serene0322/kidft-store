@@ -50,10 +50,18 @@
       .name {
         width: 85%;
         margin-bottom: 15px;
+
+        @media screen and (max-width: 915px) {
+          width: 65%;
+        }
       }
   
       .price {
         width: 15%;
+
+        @media screen and (max-width: 915px) {
+          width: 35%;
+        }
       }
 
       @media screen and (max-width: 800px) {

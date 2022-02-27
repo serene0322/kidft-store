@@ -26,13 +26,12 @@ const PORT = process.env.PORT || 5000;
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(bodyParser.json());
 //make sure the url strings are getting in and we passing out do not contain spaces or symbols
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors()); //cross origin request
 
 if (process.env.NODE_ENV === 'production') {
-
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(express.static(path.join(__dirname, 'client/build')));
-
+  
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'))
   });

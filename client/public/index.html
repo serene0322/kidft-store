@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Kidft Store Developed for FYP" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -51,7 +51,7 @@
       //create a serviceWorker when the page is loaded
       window.addEventListener("load", function () {
         navigator.serviceWorker
-          .register("./worker.js")
+          .register("./serviceWorker.js")
           .then(
             function (registration) {
               console.log(

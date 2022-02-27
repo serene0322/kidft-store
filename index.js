@@ -4,6 +4,7 @@ const server = require("http").createServer(app);
 const cors = require("cors"); //allow cross-domain request
 const bodyParser = require('body-parser');
 const path = require('path'); //allow us to dynamically build when we call it from our current directory to where we want to go
+const enforce = require('express-sslify');
 
 //if we in development or testing, load dotenv into process environment
 //allow our process.env access the secret key
@@ -21,12 +22,15 @@ const io = require("socket.io")(server, {
 
 const PORT = process.env.PORT || 5000;
 
+
+app.use(enforce.HTTPS({ trustProtoHeader: true }));
 app.use(bodyParser.json());
 //make sure the url strings are getting in and we passing out do not contain spaces or symbols
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors()); //cross origin request
 
 if (process.env.NODE_ENV === 'production') {
+
   app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('*', function(req, res) {
@@ -82,6 +86,10 @@ io.on("connection", (socket) => {
 server.listen(PORT, error => {
   if (error) throw error;
   console.log(`Server is running on port ${PORT}`);
+});
+
+app.get('/service-worker.js', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'service-worker.js'));
 });
 
 app.post('/payment', (req, res) => {

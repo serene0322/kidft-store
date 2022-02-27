@@ -1,6 +1,6 @@
 {
   "short_name": "Kidft Store",
-  "name": "Kidft Store App",
+  "name": "Kidft Store App For FYP",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "kidft-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "kidft-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

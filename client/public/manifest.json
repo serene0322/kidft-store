@@ -1,6 +1,6 @@
 {
   "short_name": "Kidft Store",
-  "name": "Kidft Store App For FYP",
+  "name": "Kidft Store",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

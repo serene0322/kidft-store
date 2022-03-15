@@ -23,6 +23,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import FloatButton from './components/fab/fab.component';
 import VideoCallPage from './pages/video-call/video-call.component';
+import KidftAlanButton from './components/alan-button/alan-button.component';
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -34,6 +35,7 @@ const App = ({ checkUserSession, currentUser }) => {
     <div>
       <GlobalStyle />
       <Header />
+      <KidftAlanButton />
       <FloatButton />
       <Switch>
         <Route exact path="/" component={HomePage} />

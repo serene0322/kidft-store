@@ -15,6 +15,7 @@ const ProductPage = ({ collection, match, history, addItem }) => {
     const { items } = collection;
     
     const image = items[match.params.itemId - 1].imageUrl;
+    console.log(match.params.itemId);
 
     //convert the format to meet the slider requirement
     const images = image.map(i => ({'url': i}));

@@ -17,7 +17,7 @@ const CollectionItemCantClick = ({ item, addItem }) => {
                     backgroundImage: `url(${imageUrl[0]})`
                 }}
             />
-            <div className='collection-footer'>
+            <div className='collection-footer1'>
                 <span className='name'>{name}</span>
                 <span className='price'>RM{price.toFixed(2)}</span>
             </div>

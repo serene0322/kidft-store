@@ -51,7 +51,7 @@
       //create a serviceWorker when the page is loaded
       window.addEventListener("load", function () {
         navigator.serviceWorker
-          .register("./worker.js")
+          .register("./service-worker.js")
           .then(
             function (registration) {
               console.log(

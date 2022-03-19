@@ -14,11 +14,29 @@ import './product.styles.scss';
 const ProductPage = ({ collection, match, history, addItem }) => {
     const { items } = collection;
     
-    const image = items[match.params.itemId - 1].imageUrl;
-    console.log(match.params.itemId);
+    var proId = 0;
+
+    if(match.params.collectionId == 'hats'){
+        proId = 10001;
+    }else if(match.params.collectionId == 'shoes'){
+        proId = 20001;
+    }else if(match.params.collectionId == 'girls'){
+        proId = 30001;
+    }else if(match.params.collectionId == 'bags'){
+        proId = 40001;
+    }else if(match.params.collectionId == 'boys'){
+        proId = 50001;
+    }
+
+    //console.log(match.params.collectionId);
+    
+    const image = items[match.params.itemId - proId].imageUrl;
+    //console.log(match.params);
 
     //convert the format to meet the slider requirement
     const images = image.map(i => ({'url': i}));
+
+
     
     return (
         <div className='product-page'>
@@ -35,16 +53,16 @@ const ProductPage = ({ collection, match, history, addItem }) => {
             <div className='product-detail'>
                 <h5 className='category'>{match.params.collectionId.toUpperCase()} / </h5>
                 <h1 className='name'>
-                    {items[match.params.itemId - 1].name}
+                    {items[match.params.itemId - proId].name}
                 </h1>
                 <p className='desc'>
-                    {items[match.params.itemId - 1].desc}
+                    {items[match.params.itemId - proId].desc}
                 </p>
                 <h3 className='price'>
-                    RM {items[match.params.itemId - 1].price.toFixed(2)}
+                    RM {items[match.params.itemId - proId].price.toFixed(2)}
                 </h3>
                 <div className='btns'>
-                    <CustomButton onClick={() => addItem(items[match.params.itemId - 1])}>Add To Cart</CustomButton>
+                    <CustomButton onClick={() => addItem(items[match.params.itemId - proId])}>Add To Cart</CustomButton>
                     <CustomButton onClick={() => {
                         history.push('/checkout');
                     }} addCart>

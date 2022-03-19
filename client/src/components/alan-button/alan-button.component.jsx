@@ -127,7 +127,7 @@ const KidftAlanButton = ({ hidden, toggleCart, collections, addItem, removeItem,
         
         if(allNames.includes(name.toLowerCase())) {
             let item = allItems.find(o => o.name.toLowerCase() === name.toLowerCase())
-            alanInstance.playText("I have add the item into cart.")
+            alanInstance.playText(`I have add ${name} into cart.`)
             addItem(item);
         } else {
             alanInstance.playText("Cannot add the item.")
@@ -138,7 +138,7 @@ const KidftAlanButton = ({ hidden, toggleCart, collections, addItem, removeItem,
         
         if(allNames.includes(name.toLowerCase())) {
             let item = allItems.find(o => o.name.toLowerCase() === name.toLowerCase())
-            alanInstance.playText("I have removed the item from cart.")
+            alanInstance.playText(`I have removed ${name} from cart.`)
             removeItem(item);
         } else {
             alanInstance.playText("The item is not available in cart.")
@@ -155,7 +155,7 @@ const KidftAlanButton = ({ hidden, toggleCart, collections, addItem, removeItem,
         if(allNames.includes(name.toLowerCase())) {
             //console.log(name);
             let item = allItems.find(o => o.name.toLowerCase() === name.toLowerCase())
-            alanInstance.playText("I have cleared the item from cart.")
+            alanInstance.playText(`I have cleared ${name} from cart.`)
             //console.log(item);
             clearItem(item);
         } else {

@@ -16,22 +16,20 @@ const ProductPage = ({ collection, match, history, addItem }) => {
     
     var proId = 0;
 
-    if(match.params.collectionId == 'hats'){
+    if(match.params.collectionId === 'hats'){
         proId = 10001;
-    }else if(match.params.collectionId == 'shoes'){
+    }else if(match.params.collectionId === 'shoes'){
         proId = 20001;
-    }else if(match.params.collectionId == 'girls'){
+    }else if(match.params.collectionId === 'girls'){
         proId = 30001;
-    }else if(match.params.collectionId == 'bags'){
+    }else if(match.params.collectionId === 'bags'){
         proId = 40001;
-    }else if(match.params.collectionId == 'boys'){
+    }else if(match.params.collectionId === 'boys'){
         proId = 50001;
     }
 
-    //console.log(match.params.collectionId);
     
     const image = items[match.params.itemId - proId].imageUrl;
-    //console.log(match.params);
 
     //convert the format to meet the slider requirement
     const images = image.map(i => ({'url': i}));

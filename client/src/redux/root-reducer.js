@@ -10,10 +10,11 @@ import wishlistReducer from "./wishlist/wishlist.reducer";
 import directoryReducer from "./directory/directory.reducer";
 import shopReducer from "./shop/shop.reducer";
 
+//store these item in local storage
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['cart'] //contains the string names of any reducer that want to store
+    whitelist: ['cart', 'wishlist'] //contains the string names of any reducer that want to store
 }
 
 const rootReducer = combineReducers({
@@ -25,4 +26,4 @@ const rootReducer = combineReducers({
 });
 
 //return back modified version of rootReducer with persistConfig on top of it
-export default persistReducer(persistConfig,rootReducer);
+export default persistReducer(persistConfig, rootReducer);

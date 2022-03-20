@@ -13,6 +13,7 @@ import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import WishlistPage from './pages/wishlist/wishlist.component';
 import ForgotPasswordPage from './pages/forgot-password/forgot-password.component';
 import ContactPage from './pages/contact/contact.component';
 import ProductDetailsPage from './pages/product-detail/product-details.component';
@@ -44,6 +45,7 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route exact path="/signin" render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         <Route path="/forgot-password" component={ForgotPasswordPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
+        <Route exact path="/wishlist" component={WishlistPage} />
         <Route exact path="/contact" component={ContactPage} />
         <Route path="/videocall" component={VideoCallPage} />
       </Switch>

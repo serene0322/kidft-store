@@ -18,6 +18,13 @@ const wishlistReducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 wishlistItems: addItemToWishlist(state.wishlistItems, action.payload)
             };
+        case WishlistActionTypes.CLEAR_ITEM_FROM_WISHLIST:
+            return {
+                ...state,
+                wishlistItems: state.wishlistItems.filter(
+                    wishlistItem => wishlistItem.id !== action.payload.id
+                )
+            };
         default:
             return state;
     }

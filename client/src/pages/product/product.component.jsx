@@ -6,12 +6,13 @@ import CustomButton from "../../components/custom-button/custom-button.component
 
 import { selectCollection } from "../../redux/shop/shop.selectors";
 import { addItem } from "../../redux/cart/cart.actions";
+import { addWishlist } from "../../redux/wishlist/wishlist.actions";
 
 import SimpleImageSlider from "react-simple-image-slider";
 
 import './product.styles.scss';
 
-const ProductPage = ({ collection, match, history, addItem }) => {
+const ProductPage = ({ collection, match, addItem, addWishlist }) => {
     const { items } = collection;
     
     var proId = 0;
@@ -61,13 +62,8 @@ const ProductPage = ({ collection, match, history, addItem }) => {
                 </h3>
                 <div className='btns'>
                     <CustomButton onClick={() => addItem(items[match.params.itemId - proId])}>Add To Cart</CustomButton>
-                    <CustomButton onClick={() => {
-                        history.push('/checkout');
-                    }} addCart>
-                        GO TO CART
-                    </CustomButton>
+                    <CustomButton onClick={() => addWishlist(items[match.params.itemId - proId])} addWishlist>Add To Wishlist</CustomButton>
                 </div>
-                
             </div>
         
         </div>
@@ -79,7 +75,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addItem: item => dispatch(addItem(item))
+    addItem: item => dispatch(addItem(item)),
+    addWishlist: item => dispatch(addWishlist(item))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ProductPage));

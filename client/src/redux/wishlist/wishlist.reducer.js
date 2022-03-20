@@ -25,6 +25,11 @@ const wishlistReducer = (state = INITIAL_STATE, action) => {
                     wishlistItem => wishlistItem.id !== action.payload.id
                 )
             };
+        case WishlistActionTypes.CLEAR_WISHLIST:
+            return {
+                ...state,
+                wishlistItems: []
+            };
         default:
             return state;
     }

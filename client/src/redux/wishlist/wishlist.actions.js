@@ -13,3 +13,7 @@ export const clearItemFromWishlist = item => ({
     type: WishlistActionTypes.CLEAR_ITEM_FROM_WISHLIST,
     payload: item
 });
+
+export const clearWishlist = () => ({
+    type: WishlistActionTypes.CLEAR_WISHLIST
+});

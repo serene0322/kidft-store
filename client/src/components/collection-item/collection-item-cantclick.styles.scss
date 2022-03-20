@@ -14,29 +14,51 @@
       margin-bottom: 5px;  
     }
 
-    .custom-button {
-      width: 80%;
+    .button {
+      width: 50%;
       opacity: 0.7;
-      position: absolute;
-      top: 255px;
+      top: 200px;
       display: none;
+      position: absolute;
+      align-items: center;
+
+      @media screen and (max-width: 1300px) {
+        width: 88%;
+      }
 
       @media screen and (max-width: 800px) {
-        display: block;
-        opacity: 0.9;
-        min-width: unset;
-        padding: 0 10px 0 10px;
+        width: 60%;
       }
+
+      @media screen and (max-width: 680px) {
+        width: 78%;
+      }
+
     }
+
+    // .custom-button {
+    //   width: 80%;
+    //   opacity: 0.7;
+    //   position: absolute;
+    //   top: 255px;
+    //   display: none;
+
+    //   @media screen and (max-width: 800px) {
+    //     display: block;
+    //     opacity: 0.9;
+    //     min-width: unset;
+    //     padding: 0 10px 0 10px;
+    //   }
+    // }
   
     &:hover {
       .image {
         opacity: 0.8;
       }
 
-      .custom-button {
+      .button {
         opacity: 0.85;
-        display: flex;
+        display: inline-block;
       }
     }
 

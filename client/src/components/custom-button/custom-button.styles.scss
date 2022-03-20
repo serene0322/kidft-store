@@ -33,12 +33,14 @@
       }
     }
 
-    &.addCart {
+    &.addWishlist {
       background-color: #D3D3D3;
       color: black;
+      border: 1px solid black;
 
       &:hover {
         background-color: #808080;
+        color: white;
         border: none;
       }
     }

@@ -3,8 +3,11 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import CartIcon from "../cart-icon/cart-icon.component";
+import WishlistIcon from "../wishlist-icon/wishlist-icon.componnet";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import WishlistDropDown from "../wishlist-dropdown/wishlist-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
+import { selectWishlistHidden } from "../../redux/wishlist/wishlist.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { signOutStart } from "../../redux/user/user.actions";
 
@@ -13,7 +16,7 @@ import { ReactComponent as Logo } from '../../assets/logo.svg'
 
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from "./header.style";
 
-const Header = ({ currentUser, hidden, signOutStart }) => (
+const Header = ({ currentUser, hidden, hiddenWish, signOutStart }) => (
     <HeaderContainer>
         <LogoContainer to="/">
             <Logo className='logo' />
@@ -28,8 +31,10 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
                     :
                     <OptionLink to='/signin'>SIGN IN</OptionLink>
             }
+            <WishlistIcon />
             <CartIcon />
         </OptionsContainer>
+        {hiddenWish ? null : <WishlistDropDown />}
         {hidden ? null : <CartDropdown />}
     </HeaderContainer>
 );
@@ -37,7 +42,9 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
 //the state is the root reducer
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-    hidden: selectCartHidden
+    hidden: selectCartHidden,
+    hiddenWish: selectWishlistHidden
+    
 });
 
 const mapDispatchToProps = dispatch => ({

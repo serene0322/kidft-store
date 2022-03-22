@@ -280,7 +280,7 @@ const KidftAlanButton = ({ hidden, hiddenWishlist, toggleCart, toggleWishlist, c
         setAlanInstance(
             alanBtn({
                 top: '100px',
-                left: '65px',
+                left: '38px',
                 key: 'afcc7426d0bbb9b606404ca1afdb456c2e956eca572e1d8b807a3e2338fdd0dc/stage',
                 onCommand: ({ command, payload }) => {
                     window.dispatchEvent(new CustomEvent(command, { detail: payload }));

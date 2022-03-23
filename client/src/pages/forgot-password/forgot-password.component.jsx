@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../firebase/firebase.utils";
 import { toast } from "react-toastify";
 
-import './forgot-password.styles.scss'
+import './forgot-password.styles.scss';
 
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -16,7 +16,7 @@ const ForgotPasswordPage = ({ history }) => {
         setLoading(true);
 
         const config = {
-            url: 'http://localhost:3000/signin',
+            url: 'https://kidft-store-client-server.herokuapp.com/signin',
             handleCodeInApp: true,
         };
 

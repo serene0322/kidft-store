@@ -10,6 +10,7 @@ const StripeCheckoutButton = ({ price, cartItem, clearCart }) => {
     const priceForStripe = price * 100;
     const publishableKey = 'pk_test_51JyxnYA25hMsHVIHihdM8A7WJUGy9Ze8aPnasgzrHDQBBGEWBAChGbT8btVFJg2r1NbJsSRoLwYwy8qlCtu2ubQq00DOHMr7eS';
 
+    //make a request to payment route and pass in the token
     const onToken = token => {
         axios({
             url: 'payment',

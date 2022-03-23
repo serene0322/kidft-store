@@ -15,7 +15,7 @@ const WishlistPageItem = ({ wishlistItem, clearItem }) => {
             </div>
             <span className='name'>{name}</span>
             <span className='price'>RM{price.toFixed(2)}</span>
-            <div className='remove-button' onClick={() => clearItem(wishlistItem)}>&#10005;</div>
+            <div className='remove-button' onClick={() => clearItem(wishlistItem)}>&#10060;</div>
         </div>
     )
 };

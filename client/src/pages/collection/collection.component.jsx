@@ -28,6 +28,8 @@ const CollectionPage = ({ collection }) => {
                             return item
                         } else if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
                             return item
+                        } else if (item.price.toString().includes(searchTerm)) {
+                            return item
                         }
                         return false
                     }).map(item => (

@@ -34,13 +34,13 @@ const ContactPage = () => {
 
             <form className='row' onSubmit={sendEmail}>
                 <label>Name</label>
-                <input type="text" name="name" className='form-control' />
+                <input type="text" name="name" className='form-control' required />
 
                 <label>Email</label>
-                <input type="email" name="email" className='form-control' />
+                <input type="email" name="email" className='form-control' required />
 
                 <label>Message</label>
-                <textarea name="message" rows='5' className='form-control' />
+                <textarea name="message" rows='5' className='form-control' required />
 
                 <CustomButton type='submit'>Send</CustomButton>
             </form>

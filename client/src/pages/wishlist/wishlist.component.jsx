@@ -25,9 +25,12 @@ const WishlistPage = ({ wishlistItems }) => (
             </div>
         </div>
         {
+            wishlistItems.length ?
             wishlistItems.map(wishlistItem => (
                 <WishlistPageItem key={wishlistItem.id} wishlistItem={wishlistItem}/>
             ))
+            : 
+            <span className='empty-message'>Your wishlist is empty.</span>
         }
     </div>
 );

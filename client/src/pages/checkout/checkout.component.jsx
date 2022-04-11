@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import CheckOutItem from "../../components/checkout-item/checkout-item.component";
+import CustomButton from "../../components/custom-button/custom-button.component";
 
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component";
 
@@ -10,7 +11,7 @@ import { selectCartItems, selectCartTotal } from "../../redux/cart/cart.selector
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({cartItems, total}) => (
+const CheckoutPage = ({ cartItems, total, history }) => (
     <div className='checkout-page'>
         <div className='checkout-header'>
             <div className='header-block'>
@@ -29,22 +30,45 @@ const CheckoutPage = ({cartItems, total}) => (
                 <span>Remove</span>
             </div>
         </div>
-        {
-            cartItems.map(cartItem => 
-                (
-                    <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+
+        
+            {
+                //if > 0
+                cartItems.length ? (
+                    cartItems.map(cartItem => (
+                        <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+                    ))
+                    //else
+                ) : (
+                    <span className='empty-message'>Your cart is empty.</span>
                 )
-            )
-        }
+            }
+        
         <div className='total'>
             <span>TOTAL: RM{total.toFixed(2)}</span>
         </div>
-        <div className='test-warning'>
-            *Please use the following credit card for payments*
-            <br/>
-            5555 5555 5555 4444 - Exp: 12/31 - CVV: 123
+
+        <div>
+            {
+                cartItems.length ? (
+                    <div className='test-warning'>
+                        *Please use the following credit card for payments*
+                        <br />
+                        5555 5555 5555 4444 - Exp: 12/31 - CVV: 123
+                        <br />
+                        <StripeCheckoutButton price={total} />
+                    </div>
+                    //else
+                ) : (
+                    <CustomButton onClick={() => {
+                        history.push('/shop');
+                    }}>
+                        SHOP NOW
+                    </CustomButton>
+                )
+            }
         </div>
-        <StripeCheckoutButton price={total} />
+
     </div>
 );
 
